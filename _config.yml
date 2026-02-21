@@ -1,0 +1,21 @@
+title: "schmole.com"
+description: "Work-related projects and write-ups on computer hardware and computer architecture."
+author: fschmole
+url: "https://schmole.com"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+
+markdown: kramdown
+
+permalink: /:year/:month/:day/:title/
+
+navigation:
+  - title: Home
+    url: /
+  - title: Python Scripts
+    url: /python-scripts/
+  - title: Web Apps
+    url: /web-apps/
