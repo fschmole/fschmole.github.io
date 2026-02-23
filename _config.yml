@@ -90,6 +90,17 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-archives
+
+## ----- Archives (generates individual tag & category pages) ----------------
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/
 
 ## ----- Exclude from build --------------------------------------------------
 exclude:
