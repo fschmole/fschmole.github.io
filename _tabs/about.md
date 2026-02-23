@@ -51,6 +51,8 @@ I believe in **correct-by-construction** silicon.  That means:
   for multi-agent GPU clusters while maintaining same-address ordering.
 - **Mesh Architecture Efficiency** — Optimized mesh topology and protocol,
   reducing power consumption and alleviating oversubscription.
+- **Latency Reduction** — Developed firmware-based custom multicast routing
+  through the CPU, dramatically reducing latency, power, and platform cost for storage customers, leading to important design wins and customer retention. 
 - **Virtual Meta Device** — Re-architected the legacy Volume Management
   Device into a strategic scalability solution for server platforms,
   enabling virtualized storage and networking aggregation.
@@ -61,6 +63,11 @@ I believe in **correct-by-construction** silicon.  That means:
 
 - **M.S., Electrical and Computer Engineering** — Georgia Institute of
   Technology 
+    - Minor in Economics and Game Theory
+    - Teaching assistant in Microcotroller-Based Design
+- **B.S., Electrical Engineering** — Georgia Institute of
+  Technology 
+    - Teaching assistant in Calculus IV
 
 ## Elsewhere
 
@@ -69,7 +76,6 @@ I believe in **correct-by-construction** silicon.  That means:
 
 ## About This Site
 
-Posts here cover fabric architecture trade-offs, formal specification
-workflows, data-driven analysis, and the Python and browser-based tools I
-build to make hardware design faster and more rigorous.  Written for
-engineers who work in or adjacent to silicon design.
+Posts here cover hardware architecture, design, and verification, including
+the tools I build to make hardware design faster and more rigorous. Written 
+for engineers who work in or adjacent to silicon design.

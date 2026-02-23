@@ -48,7 +48,7 @@ flowchart TD
     subgraph legacy["Legacy Corpus (existing specs)"]
         direction TB
         PDF_OLD["PDF Specs"]
-        WORD_OLD["Word / Confluence Docs"]
+        WORD_OLD["Word / FrameMaker Docs"]
         PG_OLD["Programmer's Guides"]
     end
 
@@ -85,14 +85,14 @@ flowchart TD
 ```
 
 The thick arrows from the golden source are the steady-state flow: every
-consumer reads from the same canonical data.  The dashed lines on the left
+consumer reads from the same canonical data. The dashed lines on the top
 represent the *one-time migration* — the up-front work required to get there.
 
 ## Why Formal Modeling Matters for Fabrics
 
 An I/O-memory fabric is governed by rules: ordering constraints, credit
 protocols, arbitration policies, coherence state transitions, deadlock
-freedom invariants.  These are not well captured by prose.  They *are* well
+freedom invariants. These are not well captured by prose. They *are* well
 captured by temporal logic.
 
 **TLA+** (Temporal Logic of Actions) and its procedural alias **PlusCal**
@@ -126,30 +126,27 @@ Take every PDF spec, programmer's guide, and architecture note and convert
 it into machine-readable form (structured YAML/JSON for register maps,
 TLA+ for behavioral rules).
 
-This is where LLMs can actually help *today*.  Feed the prose documents
+This is where LLMs can actually help *today*. Feed the prose documents
 into a well-prompted model and let it produce a first-draft structured
-output.  But — and this is critical — **every generated artifact must be
-manually reviewed**.  LLMs are good at format conversion; they are not
+output. But — and this is critical — **every generated artifact must be
+manually reviewed**. LLMs are good at format conversion; they are not
 reliable at semantic interpretation of ambiguous prose.
 
 ### Step 2 — Verify against the existing RTL
 
 The existing RTL is the *true* golden reference (it is, after all, what the
-silicon actually does).  Use it to validate the converted specs:
+silicon actually does). Use it to validate the converted specs:
 
 - Run the TLA+ model checker against properties extracted from the RTL.
 - Diff the machine-readable register maps against the RTL's CSR decoder.
 - Flag every discrepancy — these are either spec bugs, RTL bugs, or both.
 
-This step is painful but enormously valuable.  Teams that have done it
-invariably discover long-standing bugs hiding in the gap between the spec
+This step is painful but enormously valuable. It's virtually guaranteed to yield discovery of long-standing bugs hiding in the gap between the spec
 and the implementation.
 
 ### Step 3 — Flip the flow
 
-Once the golden source is validated, *stop editing the PDFs directly*.
-All changes start in the machine-readable source.  Human-readable documents,
-interactive tools, and AI pipelines all consume from the same root.
+Once the golden source is validated, *stop editing the sources (PDF, Word, FrameMaker, etc.) directly*. All changes start in the machine-readable source.  Human-readable documents, interactive tools, and AI pipelines all consume from the same root.
 
 ## Interactive Specifications
 
@@ -171,71 +168,28 @@ the data is structured.
 
 ### A Concrete Example: Generated CSR Documentation
 
-To make this tangible, I built a Python script that parses a
-machine-readable register specification (XML-based) and generates a
-fully self-contained, interactive HTML documentation site — no server,
-no database, just static files you can open in a browser or host on an
-internal web server.  The golden source is an XML description of every
-control/status register: address maps, register instances, bit-field
-definitions, reset values, access policies, and cross-references.  The
-script consumes that XML and produces a set of interlinked HTML pages.
+To make this tangible, I built a Python tool that parses a
+machine-readable register specification (XML) and generates a fully
+self-contained, interactive HTML documentation site — no server, no
+database, just static files.  The golden source describes every
+control/status register: address maps, instances, bit-field definitions,
+reset values, access policies, and cross-references.  The output is a
+set of interlinked HTML pages with:
 
-Here is what the generated output provides:
-
-**Global search with pre-built index.**  At build time, the script
-constructs a JSON search index covering every register and every
-bit-field — name, description, address map context — and embeds it
-directly in the HTML.  The search modal (triggered by clicking the
-floating search button or pressing `/`) performs instant client-side
-substring matching against the pre-computed index.  Results are
-categorized with colored chips (Register vs. Bitfield), show context
-about which address-map instance they belong to, and link directly to
-the relevant detail section.  No server round-trip, no waiting — up to
-75 results appear as you type.
-
-**Filter-as-you-type on every table.**  Each register summary table has
-a sticky search bar with a frosted-glass backdrop that filters rows
-live on every keystroke, matching against any column.  On the top-level
-index page, separate filter inputs cover address-map instances and
-logical interfaces independently.
-
-**Visual bit-field diagrams.**  Every register is rendered as an
-HTML table where each column is one bit.  Three rows show bit numbers
-(MSB to LSB), default/reset values (`0`, `1`, `?`, or `—`), and
-field names — with multi-bit fields merged via `colspan` and labels
-rotated vertically so they remain readable even in narrow columns.
-Fields alternate between two blue shades for a zebra-stripe effect;
-reserved bits are gray; bits beyond the register width are dimmed.
-
-**Keyboard shortcuts.**  `/` opens search, `C` toggles compact mode
-(smaller fonts, fewer columns — useful on laptops), `S` toggles the
-interface summary panel, `T` scrolls to top.  All suppressed when
-focus is in an input field.
-
-**Rich register detail cards.**  Each register gets its own expandable
-section with: short and long descriptions, a metadata grid (modules,
-consumers, access-policy badges), an instances table with computed
-absolute addresses per interface exposure, the bit-field diagram, and
-a full bit-field table with access type, reset values, and
-hardware-load cross-references rendered as dot-separated paths that
-link to the referenced register.
-
-**Deep linking with copy-to-clipboard.**  Every register detail section
-has a stable URL anchor (name + content hash for uniqueness) and a
-"Copy link" button that writes the full URL to the clipboard with
-visual feedback.  Engineers can paste direct links into bug reports or
-chat messages — the recipient lands exactly on the right register,
-not on page 1 of a 400-page PDF.
-
-**Compact mode with persistence.**  The compact toggle shrinks fonts
-and hides verbose columns (description, address-map name, register
-width) to fit more registers on screen.  The preference is saved to
-`localStorage` and restored on next visit.
-
-**Zero runtime dependencies.**  The generated HTML files are fully
-self-contained — CSS and JavaScript are inlined.  They can be opened
-from a file share, served from a minimal web server, or embedded in
-a CI artifact.  No frameworks, no build step, no node_modules.
+- **Instant global search** — a pre-built JSON index embedded in the
+  HTML enables client-side substring matching across every register and
+  bit-field.  Press `/` to open the search modal; results appear as you
+  type.
+- **Visual bit-field diagrams** — each register rendered as a per-bit
+  HTML table showing bit numbers, reset values, and color-coded field
+  names.
+- **Deep linking** — every register has a stable URL anchor and a
+  copy-to-clipboard button, so engineers can paste direct links into bug
+  reports instead of referencing page numbers in a PDF.
+- **Keyboard-driven navigation** — shortcuts for search, compact mode,
+  and scroll-to-top, all designed for quick lookup during debug sessions.
+- **Zero runtime dependencies** — CSS and JavaScript are inlined; the
+  output works from a file share, a web server, or a CI artifact.
 
 The point is not the specific tool — it is the *pattern*.  Once the
 register specification lives in a structured, machine-readable format,
@@ -245,9 +199,9 @@ is effectively impossible.
 
 ## The Up-Front Cost and the Payoff
 
-Let's be honest: the up-front work is significant.  Converting a mature
+Let's be honest: the up-front work is significant. Converting a mature
 design's specification corpus into machine-readable form is a
-multi-quarter effort, even with LLM assistance.  It requires
+multi-quarter effort, even with LLM assistance. It requires
 domain experts reviewing every conversion, resolving every ambiguity,
 and reconciling every spec-vs-RTL discrepancy.
 
@@ -264,6 +218,6 @@ The payoff is equally significant:
   is written.
 
 The teams that begin this migration now will have a compounding advantage
-over those that wait.  The cost of conversion is fixed; the cost of
+over those that wait. The cost of conversion is fixed; the cost of
 *not* converting grows with every generation of AI tooling that could
 have consumed the spec but couldn't because it was trapped in a PDF.

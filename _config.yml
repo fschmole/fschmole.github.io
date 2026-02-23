@@ -40,6 +40,14 @@ lang: en
 # light | dark — omit to follow the visitor's OS preference
 # theme_mode: dark
 
+## ----- Analytics & Pageviews -----------------------------------------------
+analytics:
+  goatcounter:
+    id: schmole
+
+pageviews:
+  provider: goatcounter
+
 ## ----- Content / Post Defaults ---------------------------------------------
 toc: true            # table of contents on every post
 
