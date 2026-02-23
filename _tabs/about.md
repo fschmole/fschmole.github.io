@@ -82,16 +82,51 @@ for engineers who work in or adjacent to silicon design.
 
 ## Contact
 
-<form action="https://formspree.io/f/meelprqp" method="POST" style="max-width: 480px;">
-  <div class="mb-2">
-    <input type="text" name="name" placeholder="Name (optional)" class="form-control">
-  </div>
-  <div class="mb-2">
-    <input type="email" name="email" placeholder="Email" required class="form-control">
-  </div>
-  <div class="mb-2">
-    <textarea name="message" placeholder="Message" required rows="4" class="form-control"></textarea>
-  </div>
+<style>
+  .about-contact-form input,
+  .about-contact-form textarea {
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid var(--border-color, #d0d0d0);
+    border-radius: 0.375rem;
+    background: var(--card-bg, var(--main-bg, #fff));
+    color: var(--text-color, var(--body-color, #212529));
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+  }
+  .about-contact-form input::placeholder,
+  .about-contact-form textarea::placeholder {
+    color: var(--text-muted-color, #6c757d);
+    opacity: 0.7;
+  }
+  .about-contact-form input:focus,
+  .about-contact-form textarea:focus {
+    outline: none;
+    border-color: var(--link-color, #0a5ad4);
+    box-shadow: 0 0 0 2px rgba(10, 90, 212, 0.15);
+  }
+  .about-contact-form button {
+    padding: 0.5rem 1.5rem;
+    border: 1px solid var(--link-color, #0a5ad4);
+    border-radius: 0.375rem;
+    background: transparent;
+    color: var(--link-color, #0a5ad4);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+  .about-contact-form button:hover {
+    background: var(--link-color, #0a5ad4);
+    color: #fff;
+  }
+</style>
+
+<form action="https://formspree.io/f/meelprqp" method="POST" class="about-contact-form" style="max-width: 480px;">
+  <input type="text" name="name" placeholder="Name (optional)">
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="message" placeholder="Message" required rows="4"></textarea>
   <input type="hidden" name="_subject" value="schmole.com — contact form">
-  <button type="submit" class="btn btn-outline-primary">Send</button>
+  <button type="submit">Send</button>
 </form>
