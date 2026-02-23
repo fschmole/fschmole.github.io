@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Machine-Readable Specifications: The Single Source of Truth for AI-Augmented Hardware Design"
-date: 2026-02-22 14:00:00 -0800
+date: 2026-02-16 14:00:00 -0800
 categories: [Architecture]
 tags: [specifications, tla+, ai, rtl, formal-methods, fabric]
 toc: true

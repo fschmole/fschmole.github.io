@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "From Formal Model to Sequence Diagram: TLA+ as a Machine-Readable Specification"
-date: 2026-02-22 18:00:00 -0800
+date: 2026-02-23 18:00:00 -0800
 categories: [Architecture]
 tags: [tla+, pluscal, formal-methods, verification, visualization, vscode]
 toc: true
 mermaid: true
 ---
 
-In a [previous post](/2026/02/22/machine-readable-specs-single-source-of-truth/)
+In a [previous post](/2026/02/16/machine-readable-specs-single-source-of-truth/)
 I argued that machine-readable specifications are the foundation for
 AI-augmented hardware design.  This post digs into a specific tool for
 that job: **TLA+** and its procedural front-end **PlusCal**.

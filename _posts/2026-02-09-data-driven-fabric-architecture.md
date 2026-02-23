@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Data-Driven Fabric Architecture: Visualizing GPU Traffic Patterns Over PCIe"
-date: 2026-02-22 10:00:00 -0800
+date: 2026-02-09 10:00:00 -0800
 categories: [Architecture]
 tags: [pcie, gpu, fabric, data-analysis, python, visualization]
 toc: true
