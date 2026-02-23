@@ -85,13 +85,8 @@ kramdown:
 ## ----- Permalink -----------------------------------------------------------
 permalink: /:year/:month/:day/:title/
 
-## ----- Feed ----------------------------------------------------------------
-feed:
-  path: feed.xml
-
 ## ----- Plugins -------------------------------------------------------------
 plugins:
-  - jekyll-feed
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-paginate
