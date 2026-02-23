@@ -8,7 +8,7 @@ url: "https://schmole.com"
 baseurl: ""
 
 ## ----- Theme ---------------------------------------------------------------
-remote_theme: cotes2020/jekyll-theme-chirpy
+theme: jekyll-theme-chirpy
 
 ## ----- Author / Sidebar ----------------------------------------------------
 author:
