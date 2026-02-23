@@ -1,21 +1,109 @@
-title: "schmole.com"
-description: "Work-related projects and write-ups on computer hardware and computer architecture."
-author: fschmole
+## ----- Site Identity -------------------------------------------------------
+title: schmole.com
+tagline: Silicon Hardware Architect
+description: >-
+  Deep dives into computer hardware design, microarchitecture, silicon
+  implementation, performance engineering, and the tools that support them.
 url: "https://schmole.com"
+baseurl: ""
 
-theme: minima
+## ----- Theme ---------------------------------------------------------------
+remote_theme: cotes2020/jekyll-theme-chirpy
 
-plugins:
-  - jekyll-feed
+## ----- Author / Sidebar ----------------------------------------------------
+author:
+  name: F. Schmole
+  url: https://schmole.com
 
+# Place your photo at assets/img/avatar.jpg (square, ≥ 512 px recommended)
+avatar: /assets/img/avatar.jpg
+
+## ----- Social links (shown in sidebar) -------------------------------------
+github:
+  username: fschmole
+
+social:
+  name: F. Schmole
+  email: ""            # optional – add your address to expose it
+  links:
+    - https://github.com/fschmole
+    # Uncomment and fill in the lines below as applicable:
+    - https://www.linkedin.com/in/filipschmole
+    # - https://scholar.google.com/citations?user=YOUR_ID
+    # - https://orcid.org/YOUR_ORCID
+
+## ----- Timezone & Language -------------------------------------------------
+timezone: America/Los_Angeles
+lang: en
+
+## ----- Theme Mode ----------------------------------------------------------
+# light | dark — omit to follow the visitor's OS preference
+# theme_mode: dark
+
+## ----- Content / Post Defaults ---------------------------------------------
+toc: true            # table of contents on every post
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+      math: false
+      mermaid: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+## ----- Collections (required by Chirpy's tab system) -----------------------
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+## ----- Pagination ----------------------------------------------------------
+paginate: 10
+paginate_path: /page:num/
+
+## ----- Markdown / Syntax Highlighting -------------------------------------
 markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    block:
+      line_numbers: true
+      start_line: 1
 
+## ----- Permalink -----------------------------------------------------------
 permalink: /:year/:month/:day/:title/
 
-navigation:
-  - title: Home
-    url: /
-  - title: Python Scripts
-    url: /python-scripts/
-  - title: Web Apps
-    url: /web-apps/
+## ----- Feed ----------------------------------------------------------------
+feed:
+  path: feed.xml
+
+## ----- Plugins -------------------------------------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jekyll-remote-theme
+
+## ----- Exclude from build --------------------------------------------------
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - "*.gem"
+  - "*.gemspec"
+  - LICENSE
+  - README.md
+  - python-scripts/
+  - web-apps/
