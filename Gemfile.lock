@@ -106,6 +106,7 @@ PLATFORMS
 DEPENDENCIES
   http_parser.rb (~> 0.6.0)
   jekyll (~> 4.3)
+  jekyll-archives
   jekyll-paginate
   jekyll-seo-tag
   jekyll-sitemap
