@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "From Formal Model to Sequence Diagram: TLA+ as a Machine-Readable Specification"
-date: 2026-02-23 18:00:00 -0800
+date: 2026-02-22 18:00:00 -0800
 categories: [Architecture]
 tags: [tla+, pluscal, formal-methods, verification, visualization, vscode]
 toc: true
