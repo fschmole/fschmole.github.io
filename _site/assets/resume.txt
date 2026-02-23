@@ -1,0 +1,62 @@
+﻿FILIP SCHMOLE
+Portland, OR | schmole.com | filip@schmole.com | (503) 683-3451
+________________
+
+
+PROFESSIONAL SUMMARY
+* Silicon SoC, IP, and I/O Architect with 25+ years of experience specializing in High-Performance Interconnects (PCIe/CXL/UXI), Coherency, and Scalability.
+* Expert in de-risking complex silicon through First-Principles modeling and data-driven verification.
+* Architect with 15 patent filings focused on interconnects and coherency, bringing a track record of driving multi-generational performance and power optimizations for server-class SoCs.
+* Collaborative technical leader who builds high-trust engineering cultures and is known for mentoring engineers by fostering ownership and architectural rigor.
+KEY TECHNICAL WINS & INNOVATION
+* GPU Interconnect Optimization: Led architectural discovery and firmware prototyping for PCIe P2P Ordering enhancements. Identified and resolved a critical destination-change stall, facilitating a ~2000% gain in nvbandwidth benchmarks for multi-agent GPU clusters while maintaining same-address ordering.
+* Mesh Architecture Efficiency: Optimized mesh topology and protocol, successfully reducing power consumption and alleviating mesh oversubscription.
+* Strategic Scalability (Intel® VMD): Re-architected the legacy Volume Management Device into the Virtual Meta Device, a strategic competitive advantage that solves device aggregation challenges for server platforms, enabling scalable storage and networking virtualization.
+* Innovation Velocity: Author of 15 USPTO Patent Filings and 27 Invention Disclosures, focusing on interconnects, coherency, and virtualization.
+* Silicon Quality: Established a “Correct-by-Construction” architectural culture by developing and evangelizing formal Code-to-Spec workflows and by analyzing >72 real-world PCIe traces to simulate bandwidth improvements, confirm protocol assumptions, and proactively mitigate design risks before RTL execution.
+________________
+
+
+________________
+
+
+CORE COMPETENCIES
+* Architectural Strategy: PCIe Gen6/7, CXL, UXI, SoC Fabric Caching & Coherency, I/O Virtualization (VT-d/VMD).
+* Methodology & Rigor: Python-based Trace Modeling, Machine-Readable Documentation (PlusCal/TLA+), Deadlock Analysis.
+* Technical Leadership: Specification Governance, Cross-functional Alignment, Mentorship.
+* Hands-On Engineering Mindset: Root-Cause Analysis, Spec-to-Prompt Precision, Hypothesis-Driven Debugging.
+PROFESSIONAL EXPERIENCE
+INTEL CORPORATION | Hillsboro, OR | Sep 2000 – Present
+SoC, IP & I/O Architect | Aug 2013 – Present
+* Architecture & Design Strategy: Led the end-to-end definition of high-bandwidth I/O fabrics (PCIe Gen6/7, UXI, CXL) for next-generation server SoCs. Transformed abstract requirements into rigorous, code-based specifications to ensure "correct-by-construction" silicon.
+* Scalability & Virtualization: Re-architected the Intel® VMD subsystem into a Virtual Meta Device to support next-generation device aggregation, directly addressing the industry need for scalable, virtualized I/O in rack-scale AI and data center environments.
+* Technical Execution: Architected Same-Destination and Same-Address Ordering solutions by analyzing open-source GPU driver behavior and reverse-engineering data movement constraints, bridging the gap between NVLink ordering models and standard PCIe deployments.
+* Methodology Leadership: Transitioned the organization from static document-based specs to dynamic, machine-readable “Code-as-Spec” workflows (XML/YAML/JSON, plantUML, PlusCal/TLA+), significantly reducing interpretation errors between Architecture and Design/Validation teams, and drastically improving quality of AI-augmented implementations via Spec-to-Prompt precision.
+* Mentorship & Team Growth: Built a collaborative, high-trust engineering environment, focused on technical excellence and integrity, successfully mentoring four engineers to the Principal rank and demonstrating a core commitment to sustained team growth and ownership.
+* Cross-Functional Alignment: Facilitated structured architectural reviews across Design, Verification, and Firmware teams to resolve complex trade-offs in power, performance, and area (PPA).
+Verification Manager & Technical Lead | Jan 2009 – July 2013
+* Directed the verification of the PCIe interface block, leading a geographically distributed team to high-confidence delivery of complex designs.
+Component Design Engineer | Sep 2000 – Jan 2009
+* Diverse roles in network processor validation, Ethernet controller verification, and server I/O chipsets. 
+* Rotations in technical marketing/evangelism and Ethernet NIC board design.
+________________
+
+
+SELECT PATENTS & PUBLICATIONS
+* Granted: Persistent Memory Write Semantics on PCIe with existing TLP definition (US-11216396).
+* Granted: Apparatus and method for role-based register protection for TDX-IO (US-12248561).
+* Pending: High-Performance Storage Infrastructure Offload (US-20230136091-A1).
+* Pending: Device Virtualization Techniques (US-20230077239-A1).
+* Pending: Quality of Service Support for Input/Output and Other Agents (US-20250103397-A1).
+* Pending: Memory Usage Hints Between a Processor of a Server and a Network Interface Device (US-20230109533-A1).
+ENDURANCE & PERSONAL PROJECTS
+* Completed the Boston Marathon in 2:49, demonstrating endurance and a strong work ethic.
+* Cycled the 10,000-foot vertical ascent of Haleakala in a single push, reflecting a personal standard of setting aggressive targets.
+* Managed and executed the construction of a multi-family building, including installing complex mechanical systems, thus demonstrating breadth and adaptability.
+EDUCATION
+M.S., Electrical and Computer Engineering | 4.0 | Georgia Institute of Technology | May 2000
+   * Teaching assistant for Microcontroller-Based Design
+   * Minor in Economics and Game Theory
+B.S., Computer Engineering | 3.9 | Georgia Institute of Technology | June 1999
+   * Teaching assistant for Calculus IV 
+   * Cooperative plan - financed 100% of education expenses

@@ -6,32 +6,70 @@ order: 1
 
 # About
 
-I'm a **silicon hardware architect** with deep expertise in the full stack of
-digital design — from high-level microarchitecture and ISA definition down to
-RTL implementation, synthesis constraints, timing closure, and silicon bring-up.
+I'm a **silicon SoC, IP, and I/O architect** with 25+ years of experience
+specializing in high-performance interconnects (PCIe/CXL/UXI), coherency,
+and scalability.  I've spent my career at the boundary between architectural
+intent and silicon reality — defining fabric protocols, proving them correct,
+and making sure the RTL does what the spec says.
 
-## Focus Areas
+## Architectural Philosophy
+
+I believe in **correct-by-construction** silicon.  That means:
+
+- **Data over intuition.**  Architectural decisions should be grounded in
+  trace analysis, first-principles modeling, and exhaustive formal
+  verification — not gut feel and hallway consensus.
+- **Machine-readable specifications.**  Prose specs accumulate ambiguity.
+  I advocate for code-as-spec workflows (TLA+/PlusCal, XML/YAML/JSON,
+  PlantUML) where the specification is *executable*, *model-checkable*,
+  and precise enough for both humans and LLMs to consume without
+  guesswork.
+- **Single source of truth.**  Every downstream artifact — human-readable
+  docs, interactive tools, RTL, testbenches — should be generated from
+  the same golden source.  Spec-RTL drift is not a fact of life; it is
+  a process failure.
+- **Spec-to-prompt precision.**  As AI-augmented design becomes the norm,
+  the quality of the specification *is* the quality of the output.
+  Ambiguity in the input is hallucination in the result.
+
+## Core Competencies
 
 | Domain | Details |
 |---|---|
-| **Microarchitecture** | Pipelines, out-of-order execution, branch prediction, speculative execution |
-| **Memory Systems** | Cache hierarchies, coherence protocols (MESI/MOESI), DRAM/HBM interfaces |
-| **On-chip Interconnects** | NoC topology, flow control, QoS, cache-coherent fabric |
-| **Performance Analysis** | Cycle-accurate simulation, workload characterization, bottleneck analysis |
-| **RTL & Synthesis** | SystemVerilog RTL, synthesis flows, timing constraints (SDC), physical signoff |
-| **Verification** | Formal property verification, UVM environments, micro-architectural corner cases |
-| **Tools & Automation** | Python-based EDA tooling, post-silicon debug scripts, coverage analysis |
+| **Interconnect Architecture** | PCIe Gen6/7, CXL, UXI, SoC fabric design, caching & coherency |
+| **I/O Virtualization** | VT-d, Intel VMD / Virtual Meta Device, device aggregation for rack-scale AI |
+| **Formal Methods** | PlusCal/TLA+ modeling, TLC model checking, deadlock analysis, invariant proofs |
+| **Data-Driven Verification** | Python trace modeling, PCIe/CXL trace analysis, bandwidth simulation |
+| **Methodology & Tooling** | Machine-readable documentation, code-as-spec, interactive spec browsers |
+| **Technical Leadership** | Specification governance, cross-functional alignment, mentorship |
+
+## Select Technical Wins
+
+- **GPU Interconnect Optimization** — Led architectural discovery for PCIe
+  P2P ordering enhancements. Identified and resolved a critical
+  destination-change stall, enabling a ~2000% gain in nvbandwidth benchmarks
+  for multi-agent GPU clusters while maintaining same-address ordering.
+- **Mesh Architecture Efficiency** — Optimized mesh topology and protocol,
+  reducing power consumption and alleviating oversubscription.
+- **Virtual Meta Device** — Re-architected the legacy Volume Management
+  Device into a strategic scalability solution for server platforms,
+  enabling virtualized storage and networking aggregation.
+- **15 USPTO patent filings** and 27 invention disclosures focused on
+  interconnects, coherency, and virtualization.
+
+## Education
+
+- **M.S., Electrical and Computer Engineering** — Georgia Institute of
+  Technology 
 
 ## Elsewhere
 
 - [GitHub](https://github.com/fschmole) — public scripts and tools
-<!-- - [LinkedIn](https://www.linkedin.com/in/YOUR_PROFILE) -->
-<!-- - [Google Scholar](https://scholar.google.com/citations?user=YOUR_ID) -->
-<!-- - [ORCID](https://orcid.org/YOUR_ORCID) -->
+- [LinkedIn](https://www.linkedin.com/in/filipschmole)
 
 ## About This Site
 
-Posts here cover architecture trade-offs, implementation notes, and the Python
-and browser-based tools I build to make hardware work faster and easier to
-understand. Everything is written for an audience of engineers who work in or
-adjacent to silicon design.
+Posts here cover fabric architecture trade-offs, formal specification
+workflows, data-driven analysis, and the Python and browser-based tools I
+build to make hardware design faster and more rigorous.  Written for
+engineers who work in or adjacent to silicon design.
