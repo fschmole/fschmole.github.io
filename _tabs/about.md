@@ -77,5 +77,21 @@ I believe in **correct-by-construction** silicon.  That means:
 ## About This Site
 
 Posts here cover hardware architecture, design, and verification, including
-the tools I build to make hardware design faster and more rigorous. Written 
+the tools I build to make hardware design faster and more rigorous. Written
 for engineers who work in or adjacent to silicon design.
+
+## Contact
+
+<form action="https://formspree.io/f/meelprqp" method="POST" style="max-width: 480px;">
+  <div class="mb-2">
+    <input type="text" name="name" placeholder="Name (optional)" class="form-control">
+  </div>
+  <div class="mb-2">
+    <input type="email" name="email" placeholder="Email" required class="form-control">
+  </div>
+  <div class="mb-2">
+    <textarea name="message" placeholder="Message" required rows="4" class="form-control"></textarea>
+  </div>
+  <input type="hidden" name="_subject" value="schmole.com — contact form">
+  <button type="submit" class="btn btn-outline-primary">Send</button>
+</form>

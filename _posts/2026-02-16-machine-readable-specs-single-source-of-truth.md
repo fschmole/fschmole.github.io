@@ -144,7 +144,7 @@ silicon actually does). Use it to validate the converted specs:
 This step is painful but enormously valuable. It's virtually guaranteed to yield discovery of long-standing bugs hiding in the gap between the spec
 and the implementation.
 
-### Step 3 — Flip the flow
+### Step 3 — Flip the script
 
 Once the golden source is validated, *stop editing the sources (PDF, Word, FrameMaker, etc.) directly*. All changes start in the machine-readable source.  Human-readable documents, interactive tools, and AI pipelines all consume from the same root.
 

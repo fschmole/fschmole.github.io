@@ -1,0 +1,24 @@
+<!-- Feedback CTA — shown at the bottom of every post -->
+<div class="post-feedback mt-4 mb-3 p-4" style="border-top: 1px solid var(--border-color, #e0e0e0);">
+  <h3 class="text-center">Comments? Feedback? Ideas?</h3>
+  <p class="text-center text-muted mb-3">
+    Reach out on
+    <a href="https://www.linkedin.com/in/filipschmole" target="_blank" rel="noopener noreferrer">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    or drop me a message below.
+  </p>
+  <form action="https://formspree.io/f/meelprqp" method="POST" class="mx-auto" style="max-width: 480px;">
+    <div class="mb-2">
+      <input type="text" name="name" placeholder="Name (optional)" class="form-control">
+    </div>
+    <div class="mb-2">
+      <input type="email" name="email" placeholder="Email" required class="form-control">
+    </div>
+    <div class="mb-2">
+      <textarea name="message" placeholder="Message" required rows="4" class="form-control"></textarea>
+    </div>
+    <input type="hidden" name="_subject" value="schmole.com — post feedback">
+    <button type="submit" class="btn btn-outline-primary w-100">Send</button>
+  </form>
+</div>
