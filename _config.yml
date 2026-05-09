@@ -37,7 +37,7 @@ lang: en
 
 ## ----- Theme Mode ----------------------------------------------------------
 # light | dark — omit to follow the visitor's OS preference
-# theme_mode: dark
+theme_mode: light
 
 ## ----- Analytics & Pageviews -----------------------------------------------
 analytics:
