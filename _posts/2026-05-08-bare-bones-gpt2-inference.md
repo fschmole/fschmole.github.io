@@ -57,6 +57,7 @@ The repository README contains the full PlantUML sequence diagram
 derived from actual trace output.  Here is a summary of the flow:
 
 ```mermaid
+%%{init: {'theme': 'neutral'}}%%
 sequenceDiagram
     actor User
     participant Chat as chat.py
